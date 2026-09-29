@@ -32,5 +32,4 @@ Ground hardware and firmware claims here. Unsourced behaviour does not ship as v
 ## Open TBDs
 
 - Phone BLE pair + Primary send: steps in `phone.md` / `verify.md` — confirm on your handset (not simulatable from the desk agent).
-- Pages domain + johna-kiwi-infra CNAME when you publish.
 - Second-node OT verify — skipped (no second node on this pass).
