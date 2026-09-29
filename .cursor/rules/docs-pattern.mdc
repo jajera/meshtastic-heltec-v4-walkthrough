@@ -1,0 +1,69 @@
+---
+description: Pattern and conventions for Zensical walkthrough pages in this repo.
+globs:
+  - "docs/**/*.md"
+alwaysApply: false
+---
+
+# Docs pattern
+
+**Voice:** Follow **[.cursor/rules/voice-tone.mdc](voice-tone.mdc)**.
+
+## Stack
+
+- Markdown under `docs/` built with **Zensical + Patina**.
+- Nav order lives only in `zensical.toml` — never number filenames.
+- Read `.kiro/steering/docs-pattern.md` and `source-lock.md` before inventing procedure detail.
+
+## Page shape
+
+1. One H1.
+2. Short lede.
+3. Numbered steps or symptom table.
+4. Screenshot placeholders → fill during live setup (`docs/assets/images/`).
+5. Link to the next nav page.
+
+## Command + result cards
+
+Match the [route53 profiles](https://aws-route53-central-outbound.johna.kiwi/demo/profiles/) pattern — one `.run` card per command, result in a separate `text {.no-copy}` fence:
+
+````markdown
+<div class="run" markdown>
+
+```bash
+lsusb | grep -i espressif
+```
+
+```text {.no-copy}
+Bus 003 Device 006: ID 303a:1001 Espressif USB JTAG/serial debug unit
+```
+
+</div>
+````
+
+Do not put the command and its stdout in one fence. Do not stack unrelated commands in one card.
+
+## Tables
+
+Use spaced GFM separators:
+
+```markdown
+| Column A | Column B |
+| --- | --- |
+| one | two |
+```
+
+## Critical hardware rules
+
+- **Identify V4 vs V4 R8 first** (PSRAM 2MB vs 8MB; Vext GPIO36 vs 40). Never collapse them.
+- Desk evidence: plain **Heltec V4** → `heltec-v4`. True R8 → `heltec-v4-r8-oled`.
+- Firmware floor: Meshtastic **≥ 2.7.25** (live pass used 2.7.26.54e0d8d).
+- Bootloader before web flash: hold USER (PRG), tap RST, release USER.
+- Web Serial: Chrome / Chromium / Edge only.
+- First flash: Full Erase on, MESHTASTIC/UI off.
+- Set LoRa region before TX (**ANZ** for NZ 915).
+- Blank OLED after a flash that followed a working stock display → wrong V4/R8 target.
+
+## Accuracy
+
+Prefer facts in `.kiro/steering/source-lock.md`. Tag anything not yet observed as **unverified**.

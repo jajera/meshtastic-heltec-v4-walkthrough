@@ -1,0 +1,15 @@
+---
+description: Professional documentation voice for this repo — lead with the idea, cite vendors as support.
+alwaysApply: true
+---
+
+# Voice and tone
+
+- Write in a **professional**, **direct**, and **confident** voice.
+- This site is **its own guide**. Explain the step for the reader first. Heltec and Meshtastic
+  docs are supporting references, not the narrator.
+- Avoid copycat framing (“as the vendor guide shows…”) as the lead clause.
+- Prefer imperative or factual statements: “Hold USER, tap RST…”, “Select Heltec V4…”.
+- Mark unverified steps clearly until the live board pass.
+
+For `docs/**`, also follow [.cursor/rules/docs-pattern.mdc](docs-pattern.mdc).

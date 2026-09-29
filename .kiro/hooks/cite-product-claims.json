@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Cite product claims",
+      "description": "After the agent edits a docs page, remind it to ground Heltec/Meshtastic behaviour in the source lock rather than recall.",
+      "trigger": "PostFileSave",
+      "matcher": "docs/.*\\.md$",
+      "action": {
+        "type": "agent",
+        "prompt": "You just edited a docs page. Before moving on, check it against .kiro/steering/source-lock.md: every Heltec or Meshtastic behavioural claim on the page must appear in the verified-facts list or be backed by a link to official docs or a screenshot in docs/assets. Anything not yet run on the physical board stays marked as unverified. If a claim cannot be sourced, update source-lock TBD or remove the claim."
+      }
+    }
+  ]
+}
