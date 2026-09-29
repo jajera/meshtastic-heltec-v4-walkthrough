@@ -2,6 +2,11 @@
 
 Flash a **Heltec WiFi LoRa 32 V4** with Meshtastic, set region, and prove the node is alive.
 
+<figure class="shot-fig" markdown="span">
+![Heltec V4 in an open case with Quectel L76K GPS, LiFePO4 cell, and SMA antenna](assets/images/overview-desk-board.jpg)
+<figcaption>Desk unit after flash — Heltec V4, Expansion Kit GPS, battery, SMA antenna.</figcaption>
+</figure>
+
 ## Host note
 
 Host-side checks and serial examples were done on **Fedora**. Flash and Meshtastic config are the same elsewhere; package names, serial groups, and device paths may differ.
